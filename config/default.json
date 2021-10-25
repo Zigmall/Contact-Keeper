@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://Zigmal:password004@contactkeeper.uroai.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" 
+    "mongoURI":"mongodb+srv://Zigmal:password004@contactkeeper.uroai.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret": "secret"
 }
