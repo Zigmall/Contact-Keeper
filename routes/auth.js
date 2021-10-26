@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const auth = require('../middleware/auth');
 const { check, validationResult } = require('express-validator');
 
 const User = require('../Models/Users');
@@ -10,8 +11,14 @@ const User = require('../Models/Users');
 // @route   GET api/auth
 // @desc    Get legged in user
 // @access  Private       
-router.get('/', (req, res) => {
-    res.send('Get legged in user');
+router.get('/', auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        res.json(user);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error'); 
+    }
 });
 
 // @route   POST api/auth
@@ -54,7 +61,7 @@ router.post('/', [
          });
 
     } catch (err) {
-        console.log(err.messate);
+        console.log(err.message);
         res.status(500).send('Server error');
     }
 
