@@ -29,6 +29,13 @@ const ContactState = props => {
                 phone: "333-333-333", 
                 type:"personal"
             },
+            {
+                id: 3,
+                name: "Victor Smith",
+                email: "victors@gmail.com",
+                phone: "777-333-333", 
+                type: "professional"
+            },
         ] 
     }
 
