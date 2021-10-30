@@ -35,7 +35,7 @@ const ContactItem = ({ contact }) => {
         )}
           {phone && (
           <li>
-            <FontAwesomeIcon icon='phone' /> {email}
+            <FontAwesomeIcon icon='phone' /> {phone}
           </li>
         )}
       </ul>
