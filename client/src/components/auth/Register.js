@@ -41,16 +41,16 @@ const Register = () => {
         <div className='form-group'>
           <lanel htmlFor='passowrd'>Password</lanel>
           <input
-            type='passowrd'
+            type='password'
             name='password'
             value={password}
             onChange={onChange}
           ></input>
         </div>
         <div className='form-group'>
-          <lanel htmlFor='passowrd2'>Confirm Password</lanel>
+          <lanel htmlFor='password2'>Confirm Password</lanel>
           <input
-            type='passowrd'
+            type='password'
             name='password2'
             value={password2}
             onChange={onChange}
