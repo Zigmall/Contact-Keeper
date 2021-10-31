@@ -1,10 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 
 const Register = () => {
   const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
 
   const { setAlert } = alertContext;
+  const { register, error, clearErrors } = authContext;
+
+  useEffect(() => {
+    if (error === 'User already exists') {
+      setAlert(error, 'danger');
+      clearErrors();
+    }
+  }, [error]);
 
   const [user, setUser] = useState({
     name: '',
@@ -22,7 +32,11 @@ const Register = () => {
     } else if (password !== password2) {
       setAlert('Passwords do not match!', 'danger');
     } else {
-      console.log('Register submit');
+      register({
+        name,
+        email,
+        password,
+      });
     }
   };
   return (
@@ -32,7 +46,7 @@ const Register = () => {
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <lanel htmlFor='name'>Name</lanel>
+          <label htmlFor='name'>Name</label>
           <input
             type='text'
             name='name'
@@ -42,7 +56,7 @@ const Register = () => {
           ></input>
         </div>
         <div className='form-group'>
-          <lanel htmlFor='email'>Email Adress</lanel>
+          <label htmlFor='email'>Email Adress</label>
           <input
             type='email'
             name='email'
@@ -52,7 +66,7 @@ const Register = () => {
           ></input>
         </div>
         <div className='form-group'>
-          <lanel htmlFor='passowrd'>Password</lanel>
+          <label htmlFor='passowrd'>Password</label>
           <input
             type='password'
             name='password'
@@ -63,7 +77,7 @@ const Register = () => {
           ></input>
         </div>
         <div className='form-group'>
-          <lanel htmlFor='password2'>Confirm Password</lanel>
+          <label htmlFor='password2'>Confirm Password</label>
           <input
             type='password'
             name='password2'
