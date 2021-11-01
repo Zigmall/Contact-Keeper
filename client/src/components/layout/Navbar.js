@@ -8,11 +8,14 @@ const Navbar = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
   const { isAuthenticated, logout, user } = authContext;
 
+  const onLogout = () => {
+      logout();
+  }
   const authLinks = (
     <>
       <li>Hello {user && user.name}</li>
       <li>
-        <a href='#!'>
+        <a onClick={onLogout} href='#!'>
           <FontAwesomeIcon icon='sign-out-alt' />{' '}
           <span className='hide-sm'>Logout</span>
         </a>
@@ -22,7 +25,6 @@ const Navbar = ({ title, icon }) => {
 
   const guestLinks = (
     <>
-      <li>Hello {user && user.name}</li>
       <li>
         <Link to='/register'>Register</Link>
       </li>
