@@ -41,7 +41,6 @@ const Contacts = () => {
                   <ContactItem key={contact.id} contact={contact} />
                 </CSSTransition>
               ))}
-          ;
         </TransitionGroup>
       ) : (
         <Spinner />
@@ -49,6 +48,5 @@ const Contacts = () => {
     </>
   );
 };
-
 
 export default Contacts;
