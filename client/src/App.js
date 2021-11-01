@@ -18,8 +18,13 @@ import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import Alerts from './components/layout/Alerts';
+import setAuthToken from './utils/setAuthToken'; 
 
 library.add(fab, faIdCardAlt, faEnvelopeOpen, faPhone, faInfoCircle);
+
+if(localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
   return (

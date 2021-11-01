@@ -19,7 +19,7 @@ const Login = () => {
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <lanel htmlFor='email'>Email Adress</lanel>
+          <label htmlFor='email'>Email Adress</label>
           <input
             type='email'
             name='email'
@@ -28,7 +28,7 @@ const Login = () => {
           ></input>
         </div>
         <div className='form-group'>
-          <lanel htmlFor='passowrd'>Password</lanel>
+          <label htmlFor='passowrd'>Password</label>
           <input
             type='password'
             name='password'
