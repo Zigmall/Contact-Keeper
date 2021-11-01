@@ -8,6 +8,7 @@ import {
   faEnvelopeOpen,
   faPhone,
   faInfoCircle,
+  faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
@@ -20,7 +21,7 @@ import AlertState from './context/alert/AlertState';
 import Alerts from './components/layout/Alerts';
 import setAuthToken from './utils/setAuthToken'; 
 
-library.add(fab, faIdCardAlt, faEnvelopeOpen, faPhone, faInfoCircle);
+library.add(fab, faIdCardAlt, faEnvelopeOpen, faPhone, faInfoCircle, faSignOutAlt);
 
 if(localStorage.token) {
   setAuthToken(localStorage.token);
