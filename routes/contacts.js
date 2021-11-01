@@ -70,10 +70,6 @@ router.put('/:id', auth, async (req, res) => {
         
         //Make sure user owns contacts
         if(contact.user.toString() !== await req.user.id) {
-            console.log('1');
-            console.log(contact.user.toString())
-            console.log('2');
-            console.log(req.user.id);
             return res.status(401).json({ msg: 'Not authorized' });
         }
         contact = await Contact.findByIdAndUpdate(req.params.id, 
