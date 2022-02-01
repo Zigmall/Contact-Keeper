@@ -17,3 +17,18 @@ MongoDB, express.
 
 ### Deployment
 Heroku
+
+
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run-script dev`
+
+Runs simultaneously two scrippts: client and server.
+
+### Client runs on: 
+[http://localhost:3000](http://localhost:3000)
+### Server runs on: 
+[http://localhost:5000](http://localhost:5000)
